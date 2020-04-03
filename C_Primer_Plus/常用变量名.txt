@@ -1,0 +1,47 @@
+常用名          变量用名词,函数用动词
+
+英文名              常作意义
+_____________________________________________________
+count                            计数器
+get                              传出参数;读取对象;得到;
+                  get to      到达  开始  接触  达到
+                  get rolling 动手 开始
+                  Get Feedback 获得反馈  得到反馈
+                  get along   进展  相处融洽  过活
+                  get going   开始  动手  赶快  开始工作
+set                               设置; 创造; 集合
+                  set up       设立  创立
+                  data set     数据集  数据组
+                  Set point    设定值  设定点
+                  information set 信息集 
+input                              输入;投入;
+value                              值;价值;价格
+number  num    [nan ber]           数字;号码;算术
+function func                      功能;函数
+                  system function  系统功能；系统函数
+                  basic function  基函数；基本函数
+                  service function  服务功能
+                  control function  控制函数
+                  object function  目标函数；原函数
+close           [c lo s]           关闭;封闭;结束;
+time                               时间;次数
+result          [re z ao t]        结果;答案;产生
+initialize                         初始化
+update                             更新;升级
+text            /te ks t/          文本;主题
+test            /te s t/         检查;测验;测试;考试
+open                               打开;开放;营业;
+file                            文档;文件夹;锉刀           
+statement                          声明
+folder           [fo der]          文件夹;目录
+work                               工作;工厂;产品;事业;著作;艺术作品;
+auto             [ao to]            汽车;自动;自动模式
+                auto update         自动更新
+                AUTO FEED           自动换行
+save            [sei vu]            保存
+revert                              使恢复;
+while          [wai ao]             计.循环
+break          [b rea k]           打破;打断;终止;间断;休息;
+continue       [con ti niu]         继续;连续;依旧
+form            [f o m]             形式;形状;方式;表格;构成;组织;排列
+table           [tei b]             桌子;表格;制表;嵌合

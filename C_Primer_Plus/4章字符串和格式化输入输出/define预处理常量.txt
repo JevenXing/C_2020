@@ -1,0 +1,13 @@
+预处理常量\符号常量
+#define NAME value
+也可以定义字符串常量
+#define BEEP '\a' 
+#define TEE 'T' 
+#define ESC '\033' 
+#define OOPS "Now ou have done it!"
+
+1.用大写表示符号常量是 C 语言一贯的传统。
+2.通常名称前带c_或k_前缀来表示常 量（如，c_level或k_line）
+
+操作 
+预处理器在编译前替换符号常量的值;

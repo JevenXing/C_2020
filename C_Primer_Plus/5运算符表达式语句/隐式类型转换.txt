@@ -1,0 +1,19 @@
+表达式中的隐式类型转换
+
+1.当表达式中的变量类型不统一时,编译器会进行类型升级 由小类型->大类型
+
+2.类型级别:
+        long  double > double > float > unsigned long long > long long >unsigned long > long > unsigned long > long > unsigned int > int 
+
+        例外: 当long = int 时,unsigned int > long ;
+
+3.当表达式赋值时可能降级 丢失精度   大类型->小类型
+
+4.当作为实参传递时,char 和 short 转换成 int ,float 转换成 double 自动升级.
+
+5.待赋值与目标类型不匹配时的降级规则
+    1.待赋值为无符号整数,目标类型是 8 位unsigned char时,则待赋的值是原始值求模256。
+    2.待赋值为整数,目标类型是有符号整数,则结果以实现而异.
+    3.待赋值是浮点数,目标类型是整数,则该行为时未定义的.
+        原来的浮点值会被截断。例如，23.12和23.99都会被截断为23，-23.5 会被截断为-23。
+

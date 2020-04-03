@@ -1,0 +1,3 @@
+sizeof 运算符的返回类型
+C99 和 C11 标准专门为 sizeof 运算符的返回类型添加 了%zd 转换说明，这对于strlen()同样适用。
+对于早期的C，还要知道sizeof和 strlen()返回的实际类型（通常是unsigned或unsigned long）。

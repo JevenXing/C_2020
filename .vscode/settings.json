@@ -1,0 +1,17 @@
+{
+    "files.associations": {
+        "system_error": "c",
+        "xlocale": "c",
+        "malloc.h": "c",
+        "stdio.h": "c",
+        "memory": "c",
+        "tuple": "c",
+        "type_traits": "c",
+        "xmemory": "c",
+        "string.h": "c",
+        "stdbool.h": "c",
+        "algorithm": "c",
+        "math.h": "c",
+        "istream": "c"
+    }
+}
