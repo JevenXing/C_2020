@@ -2,7 +2,7 @@
  * @Description: 6.16 编程练习
  * @Date: 2020-04-01 01:00:43
  * @LastEditors: JEVEN
- * @LastEditTime: 2020-04-04 08:59:55
+ * @LastEditTime: 2020-04-04 13:23:18
  */
 #include <math.h>
 #include <stdio.h>
@@ -22,6 +22,9 @@ void for_table_6();
 void char_arr_7();
 void float_ys_8();
 void wx_12();
+void int_arr_13();
+void dou2_14();
+void input_char();
 int main() {
     // a_Z_1();
     // ztxh_2();
@@ -31,10 +34,83 @@ int main() {
     // for_table_6();
     // char_arr_7();
     // float_ys_8();
-    wx_12();
+    // wx_12();
+    // int_arr_13();
+    dou2_14();
     stop_look();
     return 0;
 }
+/**
+ * @description: 编写一个程序，读取一行输入，然后把输入的内容倒序打印出来。
+ * 可以把输入储存在char类型的数组中，假设每行字符不超过255。回忆一
+ * 下，根据%c转换说明，scanf()函数一次只能从输入中读取一个字符，而且
+ * 在用户按下Enter键时scanf()函数会生成一个换行字符（\n）。
+ * @param {type}
+ * @return:
+ */
+void input_char() {
+    char ch[255];
+    int count_ch = 0;
+    for (int i = 0, count = scanf("%c", ch); count >= 1 || i < 255; i++) {
+        count = scanf("%c", ch + i);
+    }
+    for (int i = 0; i < count_ch; i++) {
+        printf("%c", ch[i]);
+    }
+}
+/**
+ * @description: 编写一个程序，创建两个包含8个元素的double类型数组，使用循环
+ * 提示用户为第一个数组输入8 个值。第二个数组元素的值设置为第一个数组
+ * 对应元素的累积之和。
+ * @param {type}
+ * @return:
+ */
+void dou2_14() {
+    double num1[8], num2[8];
+    const int count = 8;
+    for (int i = 0; i < count; i++) {
+        printf("输入第%d个数:", i);
+        scanf("%lf", num1 + i);
+        if (i == 0) {
+            num2[i] = num1[i];
+        } else {
+            num2[i] = num2[i - 1] + num1[i];
+        }
+    }
+    for (int j = 0; j < count; j++) {
+        printf("%lf\t", num1[j]);
+    }
+    printf("\n");
+    for (int j = 0; j < count; j++) {
+        printf("%lf\t", num2[j]);
+    }
+    printf("\n");
+}
+/**
+ * @description: 编写一个程序，创建一个包含8个元素的int类型数组，分别把数组元
+ * 素设置为2的前8次幂。使用for循环设置数组元素的值，使用do while循环显
+ * 示数组元素的值
+ * @param {type}
+ * @return:
+ */
+void int_arr_13() {
+    int count = 10, numarr[count];
+    for (int i = 0; i < count; i++) {
+        numarr[i] = (int)pow(2, 8);
+    }
+    int i = 0;
+    do {
+        printf("%d\t", numarr[i]);
+    } while (++i < count);
+}
+
+/**
+ * @description: 编写一个程序计算这两个无限序列的总和，直到到达某次数。
+ * 1.0 + 1.0/2.0 + 1.0/3.0 + 1.0/4.0 + ... 1.0 - 1.0/2.0 + 1.0/3.0 - 1.0/4.0 +
+ * ...
+ * @param {type}
+ * @return:
+ */
 void wx_12() {
 
     const double x = 1.0;
