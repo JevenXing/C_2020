@@ -2,7 +2,7 @@
  * @Description: 6.16 编程练习
  * @Date: 2020-04-01 01:00:43
  * @LastEditors: JEVEN
- * @LastEditTime: 2020-04-04 01:09:13
+ * @LastEditTime: 2020-04-04 08:59:55
  */
 #include <math.h>
 #include <stdio.h>
@@ -52,10 +52,8 @@ void wx_12() {
                 result2 = x + x / (double)i;
             }
         }
-         printf("\njiou he:%lf,jijia oujian he:%lf\n", result1, result2);
+        printf("\njiou he:%lf,jijia oujian he:%lf\n", result1, result2);
     }
-
-   
 }
 void float_ys_8() {
     float a, b;
