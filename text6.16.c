@@ -2,7 +2,7 @@
  * @Description: 6.16 编程练习
  * @Date: 2020-04-01 01:00:43
  * @LastEditors: JEVEN
- * @LastEditTime: 2020-04-04 13:23:18
+ * @LastEditTime: 2020-04-04 13:31:16
  */
 #include <math.h>
 #include <stdio.h>
