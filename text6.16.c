@@ -2,7 +2,7 @@
  * @Description: 6.16 编程练习
  * @Date: 2020-04-01 01:00:43
  * @LastEditors: JEVEN
- * @LastEditTime: 2020-04-04 13:31:16
+ * @LastEditTime: 2020-04-04 14:50:22
  */
 #include <math.h>
 #include <stdio.h>
@@ -24,7 +24,7 @@ void float_ys_8();
 void wx_12();
 void int_arr_13();
 void dou2_14();
-void input_char();
+void input_char_15();
 int main() {
     // a_Z_1();
     // ztxh_2();
@@ -36,7 +36,9 @@ int main() {
     // float_ys_8();
     // wx_12();
     // int_arr_13();
-    dou2_14();
+    // dou2_14();
+    input_char_15();
+
     stop_look();
     return 0;
 }
@@ -48,13 +50,21 @@ int main() {
  * @param {type}
  * @return:
  */
-void input_char() {
+void input_char_15() {
     char ch[255];
     int count_ch = 0;
-    for (int i = 0, count = scanf("%c", ch); count >= 1 || i < 255; i++) {
-        count = scanf("%c", ch + i);
+    printf("输入一行字符:\n");
+    int count = scanf("%c", ch);
+    //一个中文字符占用两次char类型 如果此方法用户输入了中文 结果会出错
+    //
+    for (int i = 0; count >= 1; i++) {
+        count = scanf("%c", ch + i + 1);
+        count_ch++;
+        if (ch[i + 1] == 10)
+            break;
     }
-    for (int i = 0; i < count_ch; i++) {
+    printf("result:");
+    for (int i = count_ch; i >= 0; i--) {
         printf("%c", ch[i]);
     }
 }
