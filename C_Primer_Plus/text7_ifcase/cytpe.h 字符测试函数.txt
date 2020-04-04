@@ -1,0 +1,20 @@
+cytpe.h 字符测试函数
+
+函数名              如下参数返回真
+isalnum()           字母或数字
+isalpha()           字母或数字
+isblank()           标准空白字符(空格,制表,换行)
+iscntrl()           控制字符 (ctrl + B)
+isdigit()           数字
+isgraph()           除空格之外任意可打印字符
+islower()           小写字母
+isprint()           可打印字符
+ispunct()           标点符号(除空格\字母\数字以外任意可打印字符)
+isspace()           空白字符(所有不可打印字符)
+isupper()           大写字母
+isxdigit()          十六进制数字符
+
+字符映射函数
+
+tolower()           转换成小写字母
+toupper()           转换成大写字母
