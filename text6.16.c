@@ -2,7 +2,7 @@
  * @Description: 6.16 编程练习
  * @Date: 2020-04-01 01:00:43
  * @LastEditors: JEVEN
- * @LastEditTime: 2020-04-01 22:55:26
+ * @LastEditTime: 2020-04-04 01:09:13
  */
 #include <math.h>
 #include <stdio.h>
@@ -23,26 +23,44 @@ void char_arr_7();
 void float_ys_8();
 void wx_12();
 int main() {
-    // a_Z_1(); 
+    // a_Z_1();
     // ztxh_2();
     // xtxh_3();
     // xtxh_4();
     // xtxh_5();
     // for_table_6();
     // char_arr_7();
-    float_ys_8(); 
+    // float_ys_8();
+    wx_12();
     stop_look();
     return 0;
 }
-void wx_12(){
-    const float x =1.0f;
+void wx_12() {
 
-    
+    const double x = 1.0;
+    int count = 0;
+    double result1, result2;
+    while (1) {
+        printf("qing shu ru chi shu:");
+        if (scanf("%d", &count) < 1)
+            break;
+        for (int i = 1; i <= count; i++) {
+            result1 = x + x / (double)i;
+            if (i % 2 == 0) {
+                result2 = x - x / (double)i;
+            } else {
+                result2 = x + x / (double)i;
+            }
+        }
+         printf("\njiou he:%lf,jijia oujian he:%lf\n", result1, result2);
+    }
+
+   
 }
 void float_ys_8() {
     float a, b;
     do {
-        setbuf(stdin,NULL);
+        setbuf(stdin, NULL);
         printf("输入两个浮点数:");
     } while (scanf("%f %f", &a, &b) != 2);
 
