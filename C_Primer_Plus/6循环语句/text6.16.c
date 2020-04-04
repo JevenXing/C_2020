@@ -2,7 +2,7 @@
  * @Description: 6.16 编程练习
  * @Date: 2020-04-01 01:00:43
  * @LastEditors: JEVEN
- * @LastEditTime: 2020-04-04 15:57:36
+ * @LastEditTime: 2020-04-04 16:57:53
  */
 #include <math.h>
 #include <stdio.h>
@@ -26,6 +26,8 @@ void int_arr_13();
 void dou2_14();
 void input_char_15();
 void xili_16();
+void chilixi_17();
+void shejiaoquan_18();
 int main() {
     // a_Z_1();
     // ztxh_2();
@@ -40,9 +42,51 @@ int main() {
     // dou2_14();
     // input_char_15();
     // xili_16();
-
+    // chilixi_17();
+    // shejiaoquan_18();
     stop_look();
     return 0;
+}
+/**
+ * @description: Rabnud博士加入了一个社交圈。起初他有5个朋友。他注意到他的朋
+ * 友数量以下面的方式增长。第1周少了1个朋友，剩下的朋友数量翻倍；第2
+ * 周少了2个朋友，剩下的朋友数量翻倍。一般而言，第N周少了N个朋友，剩
+ * 下的朋友数量翻倍。编写一个程序，计算并显示Rabnud博士每周的朋友数
+ * 量。该程序一直运行，直到超过邓巴数（Dunbar’s number）。邓巴数是粗略
+ * 估算一个人在社交圈中有稳定关系的成员的最大值，该值大约是150。
+ * @param {type}
+ * @return:
+ */
+void shejiaoquan_18() {
+    const int dunbar_number = 150;
+    int friends = 4;
+    int week=1;
+    do
+    {
+        friends -= week; //每周减少的朋友;
+        friends *= 2;    //剩下的朋友翻倍;
+        printf("%d周的朋友数:%d.\n", week, friends);
+        week++;
+    } while (friends <= dunbar_number);
+}
+/**
+ * @description: Chuckie Lucky赢得了100万美元（税后），他把奖金存入年利率8%的
+ * 账户。在每年的最后一天， Chuckie取出10万美元。编写一个程序，计算多
+ * 少年后Chuckie会取完账户的钱？
+ * @param {type}
+ * @return:
+ */
+void chilixi_17() {
+    const double prin_CL = 1.0e6;
+    const double rete = 0.08;
+    const double n_get = 1.0e5;
+    double bala = prin_CL; //银行余额
+    int N;
+    for (N = 1; bala > 0; N++) {
+        bala += bala * rete; //本息=余额
+        bala -= n_get;       //取出
+    }
+    printf("取完需要%d年.\n", N);
 }
 /**
  * @description: Daphne以10%的单利息投资了100美元（也就是说，每年投资获利相
@@ -55,15 +99,16 @@ int main() {
 void xili_16() {
     const double prin_Daphne = 100, prin_Deirdre = 100;  //本金
     const double rate_Daphne = 0.1, rate_Deirdre = 0.05; //利率-复合利率
-    double N_Daphne;                                     //一年息
-    double N_Deirdre;
+    double N_Daphne = 0;                                 //利息
+    double N_Deirdre = 0;                                //利息
     int N;
-    for (N = 0; N_Deirdre <= N_Daphne; N++) {
-        N_Daphne = prin_Daphne * rate_Daphne;
-        N_Deirdre = (prin_Deirdre + N_Deirdre) *
-                    rate_Deirdre; //一年息=(本金+上次利息)*复合利率
+    for (N = 1; N_Deirdre <= N_Daphne; N++) {
+        N_Daphne += prin_Daphne * rate_Daphne;
+        N_Deirdre += (prin_Deirdre + N_Deirdre) *
+                     rate_Deirdre; //利息=(本金+上次利息)*复合利率
     }
-    printf("%d年,deirder的投资额超越daphne.\ndeirder:%lf\tdaphne:%lf.", N,N_Deirdre + prin_Deirdre, N_Daphne + prin_Daphne);
+    printf("%d年,deirder的投资额超越daphne.\ndeirder:%.2lf\tdaphne:%.2lf.", N,
+           N_Deirdre + prin_Deirdre, N_Daphne + prin_Daphne);
 }
 /**
  * @description: 编写一个程序，读取一行输入，然后把输入的内容倒序打印出来。
