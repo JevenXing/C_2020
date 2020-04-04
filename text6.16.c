@@ -2,7 +2,7 @@
  * @Description: 6.16 编程练习
  * @Date: 2020-04-01 01:00:43
  * @LastEditors: JEVEN
- * @LastEditTime: 2020-04-04 14:50:22
+ * @LastEditTime: 2020-04-04 15:57:36
  */
 #include <math.h>
 #include <stdio.h>
@@ -25,6 +25,7 @@ void wx_12();
 void int_arr_13();
 void dou2_14();
 void input_char_15();
+void xili_16();
 int main() {
     // a_Z_1();
     // ztxh_2();
@@ -37,10 +38,32 @@ int main() {
     // wx_12();
     // int_arr_13();
     // dou2_14();
-    input_char_15();
+    // input_char_15();
+    // xili_16();
 
     stop_look();
     return 0;
+}
+/**
+ * @description: Daphne以10%的单利息投资了100美元（也就是说，每年投资获利相
+ * 当于原始投资的10%）。Deirdre以 5%的复合利息投资了 100 美元（也就是
+ * 说，利息是当前余额的
+ * 5%，包含之前的利息）。编写一个程序，计算需要多少年Deirdre的投资额才会超过Daphne，并显示那时两人的投资额。
+ * @param {type}
+ * @return:
+ */
+void xili_16() {
+    const double prin_Daphne = 100, prin_Deirdre = 100;  //本金
+    const double rate_Daphne = 0.1, rate_Deirdre = 0.05; //利率-复合利率
+    double N_Daphne;                                     //一年息
+    double N_Deirdre;
+    int N;
+    for (N = 0; N_Deirdre <= N_Daphne; N++) {
+        N_Daphne = prin_Daphne * rate_Daphne;
+        N_Deirdre = (prin_Deirdre + N_Deirdre) *
+                    rate_Deirdre; //一年息=(本金+上次利息)*复合利率
+    }
+    printf("%d年,deirder的投资额超越daphne.\ndeirder:%lf\tdaphne:%lf.", N,N_Deirdre + prin_Deirdre, N_Daphne + prin_Daphne);
 }
 /**
  * @description: 编写一个程序，读取一行输入，然后把输入的内容倒序打印出来。
@@ -113,7 +136,6 @@ void int_arr_13() {
         printf("%d\t", numarr[i]);
     } while (++i < count);
 }
-
 /**
  * @description: 编写一个程序计算这两个无限序列的总和，直到到达某次数。
  * 1.0 + 1.0/2.0 + 1.0/3.0 + 1.0/4.0 + ... 1.0 - 1.0/2.0 + 1.0/3.0 - 1.0/4.0 +
@@ -244,7 +266,6 @@ void xtxh_3() {
         printf("\n");
     }
 }
-
 /**
  * @description: 打印T型文本
  * @param {type}

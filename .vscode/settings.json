@@ -13,5 +13,6 @@
         "algorithm": "c",
         "math.h": "c",
         "istream": "c"
-    }
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
 }
