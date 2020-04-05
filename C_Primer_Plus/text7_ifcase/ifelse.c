@@ -2,7 +2,7 @@
  * @Description:
  * @Date: 2020-04-04 17:02:51
  * @LastEditors: JEVEN
- * @LastEditTime: 2020-04-04 20:07:43
+ * @LastEditTime: 2020-04-04 22:54:42
  */
 #include <ctype.h> //字符分析函数
 #include <math.h>
@@ -18,14 +18,61 @@ void iszimu();
 void elseif();
 void charcount();
 void and_az();
+//统计一段字符的单词数,行数,字数;
+void get_txt_num();
+//三元运算符快速比较筛选 并赋值
+void sanyuan();
+//条件运算符的运用
+void sanyuantiaojian();
 #define PERIOD '.'
 int main() {
     // iszimu();
     // elseif();
-    and_az();
-
+    // and_az();
+    // get_txt_num();
+    // sanyuan();
+    // sanyuantiaojian();
+    
     stop();
     return 0;
+}
+void sanyuantiaojian() {
+    const int COV = 350;
+    int wall_area;
+    int cans;
+    printf("你要上漆的墙面面积:");
+    while (scanf("%d", &wall_area) == 1) {
+        cans = wall_area / COV; //需要多少整罐
+        //求摸判断有剩余墙没刷到,再加一罐;
+        cans += (wall_area % COV == 0) ? 0 : 1;
+        printf("你需要%d%s油漆.\n", cans, (cans == 1) ? "罐" : "罐罐");
+    }
+}
+
+void sanyuan() {
+    int a = 10086, b = 10010;
+    int MAX = (a > b) ? a : b;
+    printf("a and b MAX:%d?", MAX);
+}
+void get_txt_num() {
+    int ha_count = 0, ch_count = 0, ci_count = 0;
+    char ch, up_ch, prev = '\n';
+    const char STOP = '|';
+    bool inword = false;
+    printf("输入字符:");
+    while ((ch = getchar()) != STOP) {
+        ch_count++;
+        if (ch == prev)
+            ha_count++;
+        if (!isspace(ch) && !inword) {
+            inword = true;
+            ci_count++;
+        }
+        if (isspace(ch) && inword) {
+            inword = false;
+        }
+    }
+    printf("行数:%d;单词:%d;字数:%d", ha_count, ci_count, ch_count);
 }
 /**
  * @description: 利用范围检查 判断字符特征
