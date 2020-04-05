@@ -45,4 +45,5 @@ break          [b rea k]           打破;打断;终止;间断;休息;
 continue       [con ti niu]         继续;连续;依旧
 form            [f o m]             形式;形状;方式;表格;构成;组织;排列
 table           [tei b]             桌子;表格;制表;嵌合
-
+length          /leŋθ/                  长度
+width         /wɪdθ/               宽度   

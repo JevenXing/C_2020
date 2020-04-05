@@ -2,7 +2,7 @@
  * @Description:
  * @Date: 2020-04-04 17:02:51
  * @LastEditors: JEVEN
- * @LastEditTime: 2020-04-04 22:54:42
+ * @LastEditTime: 2020-04-05 16:40:05
  */
 #include <ctype.h> //字符分析函数
 #include <math.h>
@@ -24,6 +24,11 @@ void get_txt_num();
 void sanyuan();
 //条件运算符的运用
 void sanyuantiaojian();
+//使用break退出循环 案例循环计
+// 算矩形的面积。如果用户输入非数字作为矩形的长或宽，则终止循环。
+void break_MG();
+//该程序读入一个字母，然后打印出与该字母开头的动物名。
+void switch_();
 #define PERIOD '.'
 int main() {
     // iszimu();
@@ -32,9 +37,61 @@ int main() {
     // get_txt_num();
     // sanyuan();
     // sanyuantiaojian();
+    // break_MG();
+    // switch_();
     
+
     stop();
     return 0;
+}
+void switch_() {
+    char _ch;
+    printf("输入一个字母,#号结束.");
+    while ((_ch = getchar()) != '#') {
+        if (_ch == '\n')
+            continue;
+        if (islower(_ch)) {
+            switch (_ch) {
+            case 'a':
+                printf("argali 是个动物.\n");
+                break;
+            case 'b':
+                printf("big is Asia.\n");
+                break;
+
+            default:
+                printf("什么都没有...");
+                break;
+            }
+        } else {
+            //输入的不是小写字母
+            printf("请输入小写字母\n");
+            while (getchar() != '\n') { //忽略当前行的所有字符
+                continue;
+            }
+            printf("请输入一个小写字母,#号结束.\n");
+        }
+    }
+    printf("结束了呢...\n");
+}
+void break_MG() {
+    float length, width; //长宽;
+    while (printf("输入矩形长宽计算面积:"),
+           scanf("%f %f", &length, &width) == 2) {
+        (length == 0) ? printf("长度参数异常.\n") : printf("参数正常.\n");
+        (width == 0) ? printf("宽度参数异常.\n") : printf("参数正常.\n");
+        if (length == 1) {
+            printf("面积:%.2f.\n", width);
+            continue;
+        } else if (width == 1) {
+            printf("面积:%.2f.\n", length);
+            continue;
+        }
+
+        if (length != 0 && width != 0) {
+            printf("面积:%.2f.\n", length * width);
+        }
+    }
 }
 void sanyuantiaojian() {
     const int COV = 350;
