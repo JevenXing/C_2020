@@ -29,6 +29,7 @@ void sanyuantiaojian();
 void break_MG();
 //该程序读入一个字母，然后打印出与该字母开头的动物名。
 void switch_();
+//goto
 #define PERIOD '.'
 int main() {
     // iszimu();
@@ -39,7 +40,7 @@ int main() {
     // sanyuantiaojian();
     // break_MG();
     // switch_();
-    
+
 
     stop();
     return 0;
