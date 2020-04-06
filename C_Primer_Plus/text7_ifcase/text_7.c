@@ -2,7 +2,7 @@
  * @Description    :
  * @Date           : 2020-04-05 22:13:11
  * @LastEditors    : JEVEN
- * @LastEditTime   : 2020-04-06 01:57:59
+ * @LastEditTime   : 2020-04-06 11:41:36
  * @FilePath       : \C_2020\C_Primer_Plus\text7_ifcase\text_7.c
  */
 
@@ -26,7 +26,7 @@ int main() {
     // text_1();
     // text_2();
     // text_3();
-    text_4();
+    // text_4();
     stop();
     return 0;
 }
