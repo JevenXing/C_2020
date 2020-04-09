@@ -2,7 +2,7 @@
  * @Description    :第七章习题
  * @Date           : 2020-04-05 22:13:11
  * @LastEditors    : JEVEN
- * @LastEditTime   : 2020-04-07 16:03:28
+ * @LastEditTime   : 2020-04-10 00:06:19
  * @FilePath       : \C_2020\C_Primer_Plus\text7_ifcase\text_7.c
  */
 
@@ -22,21 +22,126 @@ void text_1();
 void text_3();
 void text_4();
 void text_6();
-void text_7();
-
+void text_7(float h, double incomeh);
+void text_8();
+void text_9();
+void text_10();
 int main() {
     // text_1();
     // text_2();
     // text_3();
     // text_4();
     // text_6();
-    text_7();
-
+    // text_7();
+    // text_8();
+    text_9();
     stop();
     return 0;
 }
+
 /**
- * @description: 编写一个程序，提示用户输入一周工作的小时数，然后打印工资总
+ * @description: 编写一个程序，只接受正整数输入，然后显示所有小于或等于该数的
+素数。
+ * @param {type}
+ * @return:
+ */
+void text_9() {
+    unsigned int getNum;
+    unsigned int suNnm;
+    bool tf_su; //遍历范围内所有因数的结果,一次假终假,所有真终真
+    printf("输入一个正整数,输出小于该数的素数:");
+    scanf("%d", &getNum);
+    //素数:一个因数只有1和它本身的数
+    for (int i = 2; i <= getNum; i++) {//控制判断范围
+        if (getNum <= 0)
+            break;
+        suNnm = i;
+        tf_su = true;
+        // j:
+        for (int j = 2; j < i; j++) {//控制当前数遍历因数范围
+            if (i % j == 0) {
+                tf_su = false;
+                break;//存在唯三因数 直接结束判断
+            } else {
+                tf_su = true;//遍历到最后 则此数只有两个因数
+            }
+        }
+        if (tf_su)
+            printf("%d是素数\t", suNnm);
+    }
+}
+/**
+ * @description: 10.1988年的美国联邦税收计划是近代最简单的税收方案。它分为4个类
+别，每个类别有两个等级。
+下面是该税收计划的摘要（美元数为应征税的收入）：
+
+例如，一位工资为20000美元的单身纳税人，应缴纳税费
+0.15×17850+0.28×（20000−17850）美元。编写一个程序，让用户指定缴纳
+税金的种类和应纳税收入，然后计算税金。程序应通过循环让用户可以多次
+输入。
+ * @param {type}
+ * @return:
+ */
+void text_10() {}
+/**
+ * @description:
+修改练习7的假设a，让程序可以给出一个供选择的工资等级菜单。使
+用switch完成工资等级选择。运行程序后，显示的菜单应该类似这样：
+*****************************************************************
+Enter the number corresponding to the desired pay rate or action:
+1) $8.75/hr　　　　　　　　　　　　　 2) $9.33/hr
+3) $10.00/hr　　　　　　　　　　　　　4) $11.20/hr
+5) quit
+*****************************************************************
+ * @param {type}
+ * @return:
+ */
+void text_8() {
+    int switch_manry, h; //选择项;时长
+    double incomh;       //单位时长工资
+    while (1) {
+        printf("\n\n*******************************\n");
+        printf("选着工资单价:\n");
+        printf("1) $8.75/hr\t2) $9.33/hr\n");
+        printf("3) $10.00/hr\t2) $11.20/hr\n");
+        printf("*******************************\n");
+        if (scanf("%d", &switch_manry) == 1) {
+            switch (switch_manry) {
+            case 1:
+                incomh = 8.75;
+                break;
+
+            case 2:
+                incomh = 9.33;
+                break;
+
+            case 3:
+                incomh = 10.00;
+                break;
+
+            case 4:
+                incomh = 11.20;
+                break;
+
+            default:
+                incomh = 8.00;
+                printf("默认工资.\n");
+                break;
+            }
+            printf("你工作了几个小时?:");
+            if (scanf("%d", &h) != 1) {
+                printf("时间输入有误,回到上次选择.\n");
+                continue;
+            }
+            text_7(h, incomh);
+        } else {
+            break;
+        }
+    }
+}
+/**
+ * @description:
+编写一个程序，提示用户输入一周工作的小时数，然后打印工资总
 额、税金和净收入。做如下假设：
 a.基本工资 = 1000美元/小时
 b.加班（超过40小时） = 1.5倍的时间
@@ -47,33 +152,30 @@ c.税率： 前300美元为15%
  * @param {type}
  * @return:
  */
-void text_7() {
+void text_7(float h, double incomeh) {
     const double taxRate_1 = 0.15, taxRate_2 = 0.2, taxRate_3 = 0.25;
-    double h;         //工作时长
-    double incomeh;   //每小时工资
+    const int tax_300 = 300, tax_150 = 150;
     double total_num; //税前收入
     double tax_num;   //税额
     double income;    //税后收入
     // int result;
     printf("输入你的工作时长:");
-    while (scanf("%f", &h) >= 1) {
-        (h > 40) ? (h += (h - 40) * 1.5) : h;
-        total_num = incomeh * h;
-        if (total_num <= 300) {
-            income -= (tax_num = (total_num * taxRate_1));
-            //不到450 续150的情况 不交税
-        } else if (total_num >= (300 + 150)) {
-            //前300税额
-            tax_num = (total_num * taxRate_1);
-            //续150税额
-            tax_num += 150 * taxRate_2;
-            //剩余部分
-            tax_num += (incomeh - 540) * taxRate_3;
-            //扣税
-            income -= tax_num;
-        }
+    (h > 40) ? (h += (h - 40) * 1.5) : h;
+    total_num = incomeh * h;
+    if (total_num <= 300) {
+        income = total_num - (tax_num = (total_num * taxRate_1));
+        //不到450 续150的情况 不交税
+    } else if (total_num >= tax_300 + tax_150) {
+        //前300税额
+        tax_num = tax_300 * taxRate_1;
+        //续150税额
+        tax_num += tax_150 * taxRate_2;
+        //剩余部分
+        tax_num += ((total_num - tax_150 + tax_300) * taxRate_3);
+        //扣税
+        income = total_num - tax_num;
     }
-    printf("税前工资:%.2lf,税额:%.2lf,税后工资:%.2lf", total_num, tax_num,
+    printf("税前工资:%.4lf,税额:%.4lf,税后工资:%.4lf\n", total_num, tax_num,
            income);
 }
 /**
@@ -97,7 +199,8 @@ void text_6() {
     printf("ei出现了%d次.", ei_count);
 }
 /**
- * @description: 使用if else语句编写一个程序读取输入，读到#停止。用感叹号替换句
+ * @description: 使用if
+else语句编写一个程序读取输入，读到#停止。用感叹号替换句
 号，用两个感叹号替换原来的感叹号，最后报告进行了多少次替换。
  * @param {type}
  * @return:
@@ -120,9 +223,9 @@ void text_4() {
     printf("\n进行了%d次替换.", juhao_gantanhao);
 }
 /**
- * @description: 编写一个程序，读取整数直到用户输入 0。输入结束后，程序应报告
-用户输入的偶数（不包括 0）个数、这些偶数的平均值、输入的奇数个数及
-其奇数的平均值。
+ * @description: 编写一个程序，读取整数直到用户输入
+0。输入结束后，程序应报告 用户输入的偶数（不包括
+0）个数、这些偶数的平均值、输入的奇数个数及 其奇数的平均值。
  * @param {type}
  * @return:
  */
@@ -139,7 +242,8 @@ void text_3() {
            jip);
 }
 /**
- * @description: 编写一个程序读取输入，读到#字符停止。程序要打印每个输入的字符
+ * @description:
+ * 编写一个程序读取输入，读到#字符停止。程序要打印每个输入的字符
  * 以及对应的ASCII码（十进制）。一行打印8个字符。建议:使用字符计数
  * 和求模运算符（%）在每8个循环周期时打印一个换行符。
  * @param {type}
@@ -156,7 +260,8 @@ void text_2() {
     }
 }
 /**
- * @description: //编写一个程序读取输入，读到#字符停止，然后报告读取的空格数、
+ * @description:
+ * //编写一个程序读取输入，读到#字符停止，然后报告读取的空格数、
  * 换行符数和所有其他字符的数量。
  * @param {type}
  * @return:
