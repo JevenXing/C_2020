@@ -2,7 +2,7 @@
  * @Description    :第七章习题
  * @Date           : 2020-04-05 22:13:11
  * @LastEditors    : JEVEN
- * @LastEditTime   : 2020-04-10 15:55:39
+ * @LastEditTime   : 2020-04-11 01:07:34
  * @FilePath       : \C_2020\C_Primer_Plus\text7_ifcase\text_7.c
  */
 
@@ -26,6 +26,8 @@ void text_7(float h, double incomeh);
 void text_8();
 void text_9();
 void text_11();
+void cdInput();
+void shopList(int index, bool com[], double kg[], double *kg_temp);
 int main() {
     // text_1();
     // text_2();
@@ -40,31 +42,145 @@ int main() {
 }
 /**
  * @description: ABC 邮购杂货店出售的
- * 洋蓟售价为 2.05 美元/磅，
+ * 杨莉售价为 2.05 美元/磅，
  * 甜菜售价为 1.15美元/磅，
  * 胡萝卜售价为 1.09美元/磅。
  * 在添加运费之前，100美元的订单有5%的打折优惠。
  *运费:少于或等于5磅的订单收取6.5美元的运费和包装费，
  5磅～20磅的订单收取14美元的运费和包装费，超过20磅的订单在14美元的基础上每续重1磅增加0.5美元。
- 
+
 编写一个程序，在循环中用switch语句实现用户输入不同的字母时有不同的响应，即输入a的响应是让用户输入洋蓟的磅数，b
 是甜菜的磅数，c是胡萝卜的磅数，q 是退出订购。
-程序要记录累计的重量。即，如果用户输入 4 磅的甜菜，然后输入 5磅的甜菜，程序应报告9磅的甜菜。
+程序要记录累计的重量。即，如果用户输入 4 磅的甜菜，然后输入
+5磅的甜菜，程序应报告9磅的甜菜。
 然后，该程序要计算货物总价、折扣（如果有的话）、运费和包装费。
 随后，程序应显示所有的购买信息：物品售价、订购的重量（单位：磅）、订购的蔬菜费用、订单的总费用、折扣（如果有的话）、运费和包装费，以及所有的费用总额。
  * @param {type}
  * @return:
  */
 void text_11() {
-    const double yangLi=2.05;//洋蓟
-    const double tianCai=1.15;//甜菜
-    const double huLuoBo=1.09;//胡萝卜
-    const double man100_yh=0.05;//订单满100 优惠5%
+    const double _yl = 2.05, _tc = 1.15, _hlb = 1.09; //洋蓟价格
+    const double _m100 = 0.05;                        //订单满100 优惠5%
+    char get_ch[2]; //录入当前选中品类,当前重试选择
+    bool set_gwc_commodity[] = {0, 0, 0}; //购物车_品类:yl,tc,hlb,
+    double set_gwc_kg[3];                 //购物车_品类重量
+    double *get_cd_kg;                    //录入暂存
+    double com_cost, or_cost, end_cost;   //品类总价;总价;实付总金额
+    double or_kg;                         //订单重量
+    double freight;//运费
     //<=5 =6.5; 5-20 =14; >20=14+(n-10)*0.5;  运费逻辑
-    
+    //菜单:交互格式 a-c(菜品)+空格+number(重量)
+    //计算:对应品类的重量->计算订单总价,折扣,运费and包装费
+    //打印:物品售价、订购的重量（单位：磅）、订购的蔬菜费用、订单的总费用、折扣（如果有的话）、运费和包装费，以及所有的费用总额。
+    while (1) { //订单系统
 
+        while (1) //点菜累计
+        {
+            cdInput(); //菜单打印
+            //上次选购记录>>
+            //初始化
+            for (int i = 0; i < 3; i++) {
+                set_gwc_kg[i] = 0;
+            }
 
-    
+            get_ch[1] = 'y';
+            if (scanf("%c %lf", get_ch, get_cd_kg) != 2) { //点单
+                printf("你的输入有误,是否继续点单?(y/n):");
+                scanf("%c", get_ch + 1);
+                if (get_ch[1] == 'n') { //如果选择不重试-退出
+                    printf("你结束了当前点单\n");
+                    break;
+                } else {
+                    continue; //重新点单
+                }
+            }
+            //点单正确,计算
+            switch (*get_ch) {
+            case 'a':
+                set_gwc_commodity[0] = true; //标记购买
+                set_gwc_kg[0] += *get_cd_kg; //累计分量
+                printf("你选购杨莉%.2lfKG.", set_gwc_kg[0]);
+                break;
+            case 'b':
+                set_gwc_commodity[1] = true; //标记购买
+                set_gwc_kg[1] += *get_cd_kg; //累计分量
+                printf("你选购甜菜%.2lfKG.", set_gwc_kg[1]);
+                break;
+            case 'c':
+                set_gwc_commodity[2] = true; //标记购买
+                set_gwc_kg[2] += *get_cd_kg; //累计分量
+                printf("你选购胡萝卜%.2lfKG.", set_gwc_kg[2]);
+                break;
+            case 'd':
+                printf("结算购物清单中...\n");
+                break;
+            default:
+                printf("意外错误,请排查...\n");
+                break;
+            }
+            if (*get_ch == 'd') {
+                for (int i = 0; i < 3; i++) {
+                    if (set_gwc_commodity[i]) { //品类,单价,品类售价
+                        switch (i) {
+                        case 0:
+                            printf("商品:杨莉\t单价:%.2lf\t购入:%.2lfKG\t售价:%"
+                                   ".2lfRMB.",
+                                   _yl, set_gwc_kg[i],
+                                   com_cost = set_gwc_kg[i] * _yl);
+                        case 1:
+                            printf("商品:甜菜\t单价:%.2lf\t购入:%.2lfKG\t售价:%"
+                                   ".2lfRMB.",
+                                   _tc, set_gwc_kg[i],
+                                   com_cost = set_gwc_kg[i] * _tc);
+                        case 2:
+                            printf(
+                                "商品:胡萝卜\t单价:%.2lf\t购入:%.2lfKG\t售价:%"
+                                ".2lfRMB.",
+                                _hlb, set_gwc_kg[i],
+                                com_cost = set_gwc_kg[i] * _hlb);
+                            break;
+
+                        default:
+                            break;
+                        }
+                        printf("\n");
+                    }
+                    or_cost += com_cost; //优惠前总价
+                }
+                if (or_cost >= 100) { //满减优惠后 实付金额
+                    end_cost = or_cost - 100 * _m100;
+                } else {
+                    end_cost = or_cost;
+                }
+                //计算运费
+                or_kg = set_gwc_kg[0] + set_gwc_kg[1] + set_gwc_kg[2];
+                
+                if (or_kg<=5) {
+                   freight=6.5;
+                }else if (freight>5&&freight<=20)
+                {
+                    freight=16;
+                }else if (freight>20)
+                {
+                    /* code */
+                }
+                
+                
+
+                *get_ch = 'e'; //
+            }
+        }
+        if (get_ch[1] == 'n')
+            break;
+    }
+}
+
+void cdInput() {
+    printf("=======欢迎光临 ABC邮购杂货店=======\n");
+    printf("---正在出售的商品---\na)杨莉(2.05 yuan)\nb)甜菜(1.15 "
+           "yuan)\nc)胡萝卜(1.09 yuan)\nd)结束选购.\n");
+    printf("=================================\n菜单:交互格式 "
+           "a-c(菜品)+空格+number(重量):");
 }
 /**
  * @description: 编写一个程序，只接受正整数输入，然后显示所有小于或等于该数的
@@ -79,18 +195,18 @@ void text_9() {
     printf("输入一个正整数,输出小于该数的素数:");
     scanf("%d", &getNum);
     //素数:一个因数只有1和它本身的数
-    for (int i = 2; i <= getNum; i++) {//控制判断范围
+    for (int i = 2; i <= getNum; i++) { //控制判断范围
         if (getNum <= 0)
             break;
         suNnm = i;
         tf_su = true;
         // j:
-        for (int j = 2; j < i; j++) {//控制当前数遍历因数范围
+        for (int j = 2; j < i; j++) { //控制当前数遍历因数范围
             if (i % j == 0) {
                 tf_su = false;
-                break;//存在唯三因数 直接结束判断
+                break; //存在唯三因数 直接结束判断
             } else {
-                tf_su = true;//遍历到最后 则此数只有两个因数
+                tf_su = true; //遍历到最后 则此数只有两个因数
             }
         }
         if (tf_su)
