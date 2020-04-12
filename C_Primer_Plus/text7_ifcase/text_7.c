@@ -2,7 +2,7 @@
  * @Description    :第七章习题
  * @Date           : 2020-04-05 22:13:11
  * @LastEditors    : JEVEN
- * @LastEditTime   : 2020-04-11 01:07:34
+ * @LastEditTime   : 2020-04-12 18:33:44
  * @FilePath       : \C_2020\C_Primer_Plus\text7_ifcase\text_7.c
  */
 
@@ -36,7 +36,8 @@ int main() {
     // text_6();
     // text_7();
     // text_8();
-    text_9();
+    // text_9();
+    text_11();
     stop();
     return 0;
 }
@@ -67,7 +68,7 @@ void text_11() {
     double *get_cd_kg;                    //录入暂存
     double com_cost, or_cost, end_cost;   //品类总价;总价;实付总金额
     double or_kg;                         //订单重量
-    double freight;//运费
+    double freight;                       //运费
     //<=5 =6.5; 5-20 =14; >20=14+(n-10)*0.5;  运费逻辑
     //菜单:交互格式 a-c(菜品)+空格+number(重量)
     //计算:对应品类的重量->计算订单总价,折扣,运费and包装费
@@ -154,18 +155,14 @@ void text_11() {
                 }
                 //计算运费
                 or_kg = set_gwc_kg[0] + set_gwc_kg[1] + set_gwc_kg[2];
-                
-                if (or_kg<=5) {
-                   freight=6.5;
-                }else if (freight>5&&freight<=20)
-                {
-                    freight=16;
-                }else if (freight>20)
-                {
+
+                if (or_kg <= 5) {
+                    freight = 6.5;
+                } else if (freight > 5 && freight <= 20) {
+                    freight = 16;
+                } else if (freight > 20) {
                     /* code */
                 }
-                
-                
 
                 *get_ch = 'e'; //
             }
