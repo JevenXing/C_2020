@@ -2,7 +2,7 @@
  * @Description    :第七章习题
  * @Date           : 2020-04-05 22:13:11
  * @LastEditors    : JEVEN
- * @LastEditTime   : 2020-04-12 18:33:44
+ * @LastEditTime   : 2020-06-02 15:48:26
  * @FilePath       : \C_2020\C_Primer_Plus\text7_ifcase\text_7.c
  */
 
@@ -20,7 +20,7 @@ void stop() {
 void text_2();
 void text_1();
 void text_3();
-void text_4();
+void text_4();//快捷键使用方法
 void text_6();
 void text_7(float h, double incomeh);
 void text_8();
@@ -40,18 +40,18 @@ int main() {
     text_11();
     stop();
     return 0;
-}
+}d
 /**
  * @description: ABC 邮购杂货店出售的
  * 杨莉售价为 2.05 美元/磅，
  * 甜菜售价为 1.15美元/磅，
  * 胡萝卜售价为 1.09美元/磅。
  * 在添加运费之前，100美元的订单有5%的打折优惠。
+ 
  *运费:少于或等于5磅的订单收取6.5美元的运费和包装费，
- 5磅～20磅的订单收取14美元的运费和包装费，超过20磅的订单在14美元的基础上每续重1磅增加0.5美元。
-
-编写一个程序，在循环中用switch语句实现用户输入不同的字母时有不同的响应，即输入a的响应是让用户输入洋蓟的磅数，b
-是甜菜的磅数，c是胡萝卜的磅数，q 是退出订购。
+ 5磅～20磅的订单收取14美元的运费和包装费，超过20磅的订单在14美元的基础上每续重1磅增加0.5美元.
+ 编写一个程序，在循环中用switch语句实现用户输入不同的字母时有不同的响应，即输入a的响应是让用户输入洋蓟的磅数，b
+是甜菜的磅数，cd是胡萝卜的磅数，q 是退出订购。
 程序要记录累计的重量。即，如果用户输入 4 磅的甜菜，然后输入
 5磅的甜菜，程序应报告9磅的甜菜。
 然后，该程序要计算货物总价、折扣（如果有的话）、运费和包装费。
@@ -121,7 +121,7 @@ void text_11() {
             }
             if (*get_ch == 'd') {
                 for (int i = 0; i < 3; i++) {
-                    if (set_gwc_commodity[i]) { //品类,单价,品类售价
+                d    if (set_gwc_commodity[i]) { //品类,单价,品类售价
                         switch (i) {
                         case 0:
                             printf("商品:杨莉\t单价:%.2lf\t购入:%.2lfKG\t售价:%"
@@ -129,12 +129,12 @@ void text_11() {
                                    _yl, set_gwc_kg[i],
                                    com_cost = set_gwc_kg[i] * _yl);
                         case 1:
-                            printf("商品:甜菜\t单价:%.2lf\t购入:%.2lfKG\t售价:%"
-                                   ".2lfRMB.",
+                 dd           printf("商品:甜菜\t单价:%.2lf\t购入:%.2lfKG\t售价:%"
+                   ddd                ".2lfRMB.",
                                    _tc, set_gwc_kg[i],
-                                   com_cost = set_gwc_kg[i] * _tc);
+                      d             com_cost = set_gwc_kg[i] * _tc);
                         case 2:
-                            printf(
+                       ddd     printf(
                                 "商品:胡萝卜\t单价:%.2lf\t购入:%.2lfKG\t售价:%"
                                 ".2lfRMB.",
                                 _hlb, set_gwc_kg[i],
@@ -360,7 +360,7 @@ void text_4() {
 void text_3() {
     int num;
     double ou, oup, outemp;
-    double ji, jip, jitemp;
+e'e'e'e'e'e'eeeeeeee    double ji, jip, jitemp;
     printf("输入一串数字:");
     while (scanf("%d", &num), num != 0) {
         (num % 2 == 0) ? (ou++, outemp += num, oup = outemp / ou)
