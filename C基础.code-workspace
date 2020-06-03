@@ -1,14 +1,152 @@
 {
+	
 	"folders": [
 		{
 			"path": "."
 		}
 	],
 	"settings": {
+		//vs code 编辑器设置
+	"editor.fontFamily": "Fira Code", //字体类型
+	"editor.fontLigatures": true, //是否启用字体连字
+	"editor.fontSize": 18, //设置字体大小
+	"editor.fontWeight": "normal", //字体粗细
+	"workbench.sideBar.location": "left", //侧边栏位置
+	"editor.renderWhitespace": "none", //编辑器空白字符显示方式
+	"editor.renderControlCharacters": true, //是否显示控制字体?
+	"explorer.confirmDragAndDrop": false, //资源管理器拖放文件是否提醒?
+	"workbench.activityBar.visible": true, //活动栏是否可见
+	"window.menuBarVisibility": "default", //菜单栏可见属性
+	"workbench.statusBar.visible": true, //底部状态栏可见属性
+	"files.autoSave": "afterDelay", //自动保存编辑器的方式
+	"explorer.confirmDelete": false, //资源管理器删除文件是否提醒?
+	"terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe", //控制台路径
+	"editor.mouseWheelZoom": true, //滚轮控制编辑器字体缩放
+	"http.proxySupport": "off", //对扩展使用代理?
+	"editor.wordWrap": "off", //控制折行的方式
+	"workbench.iconTheme": "vscode-icons", //当前图标主题
+	"workbench.colorTheme": "Monokai", //工作台主题
+	//tab键
+	"tabout.disableByDefault": true, //tab键 移动光标
+	//liveServer 即时调试
+	"liveServer.settings.donotShowInfoMsg": true, //HTML即时调试
+	//C_CPP
+	"C_Cpp.updateChannel": "Insiders", //c/cpp相关
+	"C_Cpp.default.cppStandard": "c++20", //c++ 默认版本
+	"C_Cpp.default.cStandard": "c11", //c 默认版本
+	"[c]": {
+		"editor.defaultFormatter": "ms-vscode.cpptools"
+	},
+	"[cpp]": {
+		"editor.defaultFormatter": "ms-vscode.cpptools"
+	},
+	"C_Cpp.default.intelliSenseMode": "gcc-x64",
+	"C_Cpp.errorSquiggles": "Disabled",
+	"C_Cpp.clang_format_fallbackStyle": "{BasedOnStyle: LLVM, UseTab: Never, IndentWidth: 4}", //可视化代码风格
+	//code runner 代码快速运行
+	"code-runner.ignoreSelection": true,
+	"code-runner.runInTerminal": true,
+	//cmake 代码结构管理
+	"cmake.configureOnOpen": true,
+	//GIT 代码迭代管理
+	"git.enableSmartCommit": true, //GIT 在没有暂存时可以提交全部更改
+	"git.autofetch": true,
+	//file header 注释配置
+	"fileheader.configObj": {
+		"prohibitAutoAdd": [
+			"json",
+			"md"
+		],
+		"createHeader": true, // 默认打开
+		"wideSame": true, // 设置为true开启
+		"wideNum": 15, // 字段长度 默认为13
+		"headInsertLine": {
+			"php": 2, // php后缀的文件，在第二行插入文件头部注释
+			"c": 1,
+			"*": 3, // 所有文件都在第3行插入注释(除了php)
+		}
+	},
+	"fileheader.customMade": { //此为头部注释
+		"Description": "",
+		// "Version": "1.0",
+		// "Autor": "JEVEN",
+		"Date": "Do not edit",
+		"LastEditors": "JEVEN",
+		"LastEditTime": "Do not edit",
+		"FilePath": "Do not edit",
+	},
+	"fileheader.cursorMode": { //此为函数注释
+		"description": "",
+		"param": "",
+		"return": "",
+		// "author": "JEVEN"
+	},
+	"markdown.preview.openMarkdownLinks": "inEditor",
+	"markdown-preview-enhanced.codeBlockTheme": "coy.css",
+	"markdown-preview-enhanced.previewTheme": "solarized-light.css",
+	//
+	"[markdown]": {
+		// 自动保存
+		"editor.formatOnSave": true,
+		// 显示空格
+		"editor.renderWhitespace": "all",
+		// 快速补全
+		"editor.quickSuggestions": {
+			"other": true,
+			"comments": true,
+			"strings": true
+		},
+		// snippet 提示优先
+		"editor.snippetSuggestions": "top",
+		"editor.tabCompletion": "on",
+		// 使用enter 接受提示
+		"editor.acceptSuggestionOnEnter": "on",
+		// 默认格式化工具为本工具
+		// "editor.defaultFormatter": "mervin.markdown-formatter",
+	},
+	//sync vscode配置云端备份
+	"sync.gist": "45ae349e488b3c694302a8010ae19b3d",
+	//md文档自动预览
+	"markdown.extension.preview.autoShowPreviewToSide": true,
+	"markdown.extension.toc.githubCompatibility": true,
+	"markdown.extension.toc.unorderedList.marker": "*",
+	"workbench.startupEditor": "newUntitledFile",
+	"files.defaultLanguage": "c", // ctrl+N新建文件后默认的语言
+	"c-cpp-flylint.cppcheck.enable": false,
+	"c-cpp-flylint.flexelint.enable": false,
+	"c-cpp-flylint.run": "onType", // 此选项貌似不起作用 
+	"c-cpp-flylint.clang.includePaths": [
+		"${workspaceRoot}",
+		"C:/LLVM/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++",
+		"C:/LLVM/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32",
+		"C:/LLVM/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward",
+		"C:/LLVM/lib/gcc/x86_64-w64-mingw32/8.1.0/include",
+		"C:/LLVM/include",
+		"C:/LLVM/x86_64-w64-mingw32/include",
+		"C:/LLVM/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"
+	],
+	"c-cpp-flylint.clang.defines": [
+		"_DEBUG",
+		"UNICODE",
+		"__GNUC__=7",
+		"__cdecl=__attribute__((__cdecl__))"
+	],
+	"c-cpp-flylint.standard": [ // 此选项貌似也不起作用 
+		"c11",
+		"c++1z"
+	],
+	//"code-runner.runInTerminal": true, // 设置成false会在“输出”中输出，无法交互 
+	"code-runner.executorMap": {
+		"c": "cd $dir && clang $fileName -o $fileNameWithoutExt.exe -Wall -g -Og -static-libgcc -fcolor-diagnostics --target=x86_64-w64-mingw -std=c11 && $dir$fileNameWithoutExt",
+		"cpp": "cd $dir && clang++ $fileName -o $fileNameWithoutExt.exe -Wall -g -Og -static-libgcc -fcolor-diagnostics --target=x86_64-w64-mingw -std=c++1z && $dir$fileNameWithoutExt"
+	},
+	"code-runner.saveFileBeforeRun": true,
+	"C_Cpp.clang_format_sortIncludes": true,
+	//"clang.diagnostic.enable": false
 		"files.associations": {
 			"string.h": "c"
 		},
-		"editor.fontFamily": "Fira Code",
-		"editor.fontSize": 18
+		"clang.diagnostic.enable": false,
+
 	}
 }

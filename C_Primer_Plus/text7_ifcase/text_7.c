@@ -2,11 +2,11 @@
  * @Description    :第七章习题
  * @Date           : 2020-04-05 22:13:11
  * @LastEditors    : JEVEN
- * @LastEditTime   : 2020-06-03 23:03:06
+ * @LastEditTime   : 2020-06-03 23:22:50
  * @FilePath       : \C_2020\C_Primer_Plus\text7_ifcase\text_7.c
  */
 
-#include <ctype.h>   //字符分析函数
+#include <ctype.h>  //字符分析函数
 #include <math.h>    //科学运算
 #include <stdbool.h> //bool类型
 #include <stdio.h>   //系统IO
