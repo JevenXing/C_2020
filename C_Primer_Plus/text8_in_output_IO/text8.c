@@ -2,7 +2,7 @@
  * @Description    :
  * @Date           : 2020-06-02 16:39:06
  * @LastEditors    : JEVEN
- * @LastEditTime   : 2020-06-04 00:05:16
+ * @LastEditTime   : 2020-06-04 00:11:18
  * @FilePath       : \C_2020\C_Primer_Plus\text8_in_output_IO\text8.c
  */
 
@@ -34,10 +34,10 @@ void echo_EOF() {//EOF验证
         putchar(ch);
     }
 }
-五千多
+
 int main() {
     Log();
-    // echo();
+    // echo();d
     echo_EOF();
     stop();
     return 0;

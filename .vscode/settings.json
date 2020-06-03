@@ -6,5 +6,6 @@
  * @FilePath       : \C_2020\.vscode\settings.json
  */ 
 {
+    "C_Cpp.errorSquiggles": "Enabled"
 
 }
