@@ -2,7 +2,7 @@
  * @Description    :第七章习题
  * @Date           : 2020-04-05 22:13:11
  * @LastEditors    : JEVEN
- * @LastEditTime   : 2020-06-02 15:48:26
+ * @LastEditTime   : 2020-06-03 23:03:06
  * @FilePath       : \C_2020\C_Primer_Plus\text7_ifcase\text_7.c
  */
 
@@ -40,7 +40,7 @@ int main() {
     text_11();
     stop();
     return 0;
-}d
+}
 /**
  * @description: ABC 邮购杂货店出售的
  * 杨莉售价为 2.05 美元/磅，
@@ -121,7 +121,7 @@ void text_11() {
             }
             if (*get_ch == 'd') {
                 for (int i = 0; i < 3; i++) {
-                d    if (set_gwc_commodity[i]) { //品类,单价,品类售价
+                    if (set_gwc_commodity[i]) { //品类,单价,品类售价
                         switch (i) {
                         case 0:
                             printf("商品:杨莉\t单价:%.2lf\t购入:%.2lfKG\t售价:%"
@@ -129,12 +129,12 @@ void text_11() {
                                    _yl, set_gwc_kg[i],
                                    com_cost = set_gwc_kg[i] * _yl);
                         case 1:
-                 dd           printf("商品:甜菜\t单价:%.2lf\t购入:%.2lfKG\t售价:%"
-                   ddd                ".2lfRMB.",
+                            printf("商品:甜菜\t单价:%.2lf\t购入:%.2lfKG\t售价:%"
+                                   ".2lfRMB.",
                                    _tc, set_gwc_kg[i],
-                      d             com_cost = set_gwc_kg[i] * _tc);
+                                  com_cost = set_gwc_kg[i] * _tc);
                         case 2:
-                       ddd     printf(
+                           printf(
                                 "商品:胡萝卜\t单价:%.2lf\t购入:%.2lfKG\t售价:%"
                                 ".2lfRMB.",
                                 _hlb, set_gwc_kg[i],
@@ -360,7 +360,7 @@ void text_4() {
 void text_3() {
     int num;
     double ou, oup, outemp;
-e'e'e'e'e'e'eeeeeeee    double ji, jip, jitemp;
+    double ji, jip, jitemp;
     printf("输入一串数字:");
     while (scanf("%d", &num), num != 0) {
         (num % 2 == 0) ? (ou++, outemp += num, oup = outemp / ou)
