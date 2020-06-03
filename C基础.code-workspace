@@ -7,6 +7,8 @@
 	"settings": {
 		"files.associations": {
 			"string.h": "c"
-		}
+		},
+		"editor.fontFamily": "Fira Code",
+		"editor.fontSize": 18
 	}
 }

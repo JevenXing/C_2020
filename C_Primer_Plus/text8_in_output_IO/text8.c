@@ -2,7 +2,7 @@
  * @Description    :
  * @Date           : 2020-06-02 16:39:06
  * @LastEditors    : JEVEN
- * @LastEditTime   : 2020-06-03 14:48:41
+ * @LastEditTime   : 2020-06-03 15:12:39
  * @FilePath       : \C_2020\C_Primer_Plus\text8_in_output\text8.c
  */
 
@@ -24,6 +24,7 @@ void echo() { //输入验证练习
         putchar(ch);
     }
 }
+
 int main() {
     Log();
     echo();

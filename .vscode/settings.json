@@ -14,5 +14,8 @@
         "math.h": "c",
         "istream": "c"
     },
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "editor.fontFamily": "Fira Code",
+    "editor.fontSize": 18,
+    "editor.wordWrap": "on"
 }
