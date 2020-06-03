@@ -2,7 +2,7 @@
  * @Description    :
  * @Date           : 2020-06-02 16:39:06
  * @LastEditors    : JEVEN
- * @LastEditTime   : 2020-06-03 22:24:15
+ * @LastEditTime   : 2020-06-03 22:55:41
  * @FilePath       : \C_2020\C_Primer_Plus\text8_in_output_IO\text8.c
  */
 
@@ -35,7 +35,6 @@ void echo_EOF() {//EOF验证
     }
 }
 
-void 
 int main() {
     Log();
     // echo();
