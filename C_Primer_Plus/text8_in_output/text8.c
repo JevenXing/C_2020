@@ -2,7 +2,7 @@
  * @Description    :
  * @Date           : 2020-06-02 16:39:06
  * @LastEditors    : JEVEN
- * @LastEditTime   : 2020-06-02 17:04:22
+ * @LastEditTime   : 2020-06-03 14:48:41
  * @FilePath       : \C_2020\C_Primer_Plus\text8_in_output\text8.c
  */
 
@@ -18,7 +18,7 @@ void stop() {
 }
 void Log() { printf("log:___________program start!\n"); }
 void echo() { //输入验证练习
-    char ch;
+    char ch; 
     while ((ch = getchar()) != '#') { //复习:运算符优先级
         //!=运算符先于赋值符,getchar将缓冲区内字符存入 ch 然后将ch的值与'#'对比
         putchar(ch);
