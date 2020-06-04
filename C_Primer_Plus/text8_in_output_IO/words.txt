@@ -1,0 +1,4 @@
+log:___________program start!
+aassddff
+
+等待输入字符结束当前程序...
