@@ -144,7 +144,8 @@
 	"C_Cpp.clang_format_sortIncludes": true,
 	//"clang.diagnostic.enable": false
 		"files.associations": {
-			"string.h": "c"
+			"string.h": "c",
+			"cstdio": "c"
 		},
 		"clang.diagnostic.enable": false,
 

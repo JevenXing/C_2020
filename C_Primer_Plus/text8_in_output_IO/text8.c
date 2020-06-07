@@ -2,15 +2,16 @@
  * @Description    :
  * @Date           : 2020-06-02 16:39:06
  * @LastEditors    : JEVEN
- * @LastEditTime   : 2020-06-04 16:09:54
+ * @LastEditTime   : 2020-06-07 20:04:17
  * @FilePath       : \C_2020\C_Primer_Plus\text8_in_output_IO\text8.c
  */
 
 #include <ctype.h>   //字符分析函数
 #include <math.h>    //科学运算
 #include <stdbool.h> //bool类型
-#include <stdio.h>   //系统IO
+#include <stdio.h>   //标准输入输出
 #include <string.h>  //字符串处理
+#include <stdlib.h> //
 void stop() {
     printf("\n等待输入字符结束当前程序...");
     setbuf(stdin, NULL);
@@ -78,6 +79,7 @@ void showChar1() {
     }
     printf("bye");
 }
+
 int main() {
     Log();
     // echo();
