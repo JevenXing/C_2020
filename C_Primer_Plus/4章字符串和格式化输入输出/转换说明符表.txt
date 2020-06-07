@@ -57,7 +57,7 @@
             l 长            long                        %ld %li
                           unsigend long               %lu %lo %x
                           double                      %le e计数法  %lf .计数法 %lg e计数法
-            L           long double                %Le %Lf %Lg
+            L   长长        long double                %Le %Lf %Lg
 
    j       在整形转换说明后面时 intmax_t \ uintmax_t        %zd  %zo
 
