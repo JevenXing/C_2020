@@ -2,8 +2,8 @@
  * @Description    :
  * @Date           : 2020-06-07 20:14:57
  * @LastEditors    : JEVEN
- * @LastEditTime   : 2020-06-07 20:28:16
- * @FilePath       : \C_2020\C_Primer_Plus\3data type and C\variable.c
+ * @LastEditTime   : 2020-07-15 14:33:47
+ * @FilePath       : \C_2020\variable.c
  */
 #include <ctype.h>   //字符分析函数
 #include <math.h>    //科学运算
